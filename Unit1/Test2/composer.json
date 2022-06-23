@@ -1,0 +1,17 @@
+{
+    "name": "unit1/test2",
+    "description": "",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": [
+      "MIT"
+    ],
+    "autoload": {
+      "psr-4": {
+        "Unit1\\Test2\\": ""
+      },
+      "files": [
+        "registration.php"
+      ]
+    }
+  }
