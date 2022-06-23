@@ -1,0 +1,17 @@
+{
+    "name": "unit3/productviewdescriptionplugin",
+    "description": "",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": [
+      "MIT"
+    ],
+    "autoload": {
+      "psr-4": {
+        "Unit3\\ProductViewDescriptionPlugin\\": ""
+      },
+      "files": [
+        "registration.php"
+      ]
+    }
+  }
