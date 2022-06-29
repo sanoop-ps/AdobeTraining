@@ -1,0 +1,43 @@
+FILE: /var/www/html/magento244/app/code/Unit3/Layout/view/frontend/templates/template.phtml
+---------------------------------------------------------------------------------------------
+FOUND 0 ERRORS AND 8 WARNINGS AFFECTING 3 LINES
+---------------------------------------------------------------------------------------------
+ 1 | WARNING | [ ] Short echo tag syntax must be used; expected "<?=" but found "<?php echo"
+ 1 | WARNING | [ ] Copyright is missing
+ 1 | WARNING | [x] The use of $this in templates is deprecated. Use $block instead.
+ 1 | WARNING | [ ] Unescaped output detected.
+ 2 | WARNING | [ ] Short echo tag syntax must be used; expected "<?=" but found "<?php echo"
+ 2 | WARNING | [x] The use of $this in templates is deprecated. Use $block instead.
+ 2 | WARNING | [ ] Unescaped output detected.
+ 3 | WARNING | [ ] Unescaped output detected.
+---------------------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 2 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+---------------------------------------------------------------------------------------------
+
+
+FILE: /var/www/html/magento244/app/code/Unit3/Layout/view/frontend/templates/single.phtml
+---------------------------------------------------------------------------------------------
+FOUND 0 ERRORS AND 7 WARNINGS AFFECTING 2 LINES
+---------------------------------------------------------------------------------------------
+ 1 | WARNING | [ ] Short echo tag syntax must be used; expected "<?=" but found "<?php echo"
+ 1 | WARNING | [ ] Copyright is missing
+ 1 | WARNING | [x] The use of $this in templates is deprecated. Use $block instead.
+ 1 | WARNING | [ ] Unescaped output detected.
+ 1 | WARNING | [x] The use of $this in templates is deprecated. Use $block instead.
+ 2 | WARNING | [ ] Short echo tag syntax must be used; expected "<?=" but found "<?php echo"
+ 2 | WARNING | [ ] Unescaped output detected.
+---------------------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 2 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+---------------------------------------------------------------------------------------------
+
+
+FILE: /var/www/html/magento244/app/code/Unit3/Layout/Controller/Layout/Singlepage.php
+--------------------------------------------------------------------------------------------------------------------------------
+FOUND 0 ERRORS AND 3 WARNINGS AFFECTING 3 LINES
+--------------------------------------------------------------------------------------------------------------------------------
+ 24 | WARNING | [x] The closing parenthesis and the opening brace of a multi-line function declaration must be on the same line
+ 29 | WARNING | [ ] Missing short description
+ 30 | WARNING | [ ] There must be exactly one blank line before tags
+--------------------------------------------------------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+--------------------------------------------------------------------------------------------------------------------------------

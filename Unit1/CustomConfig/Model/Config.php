@@ -1,4 +1,5 @@
 <?php
+
 namespace Unit1\CustomConfig\Model;
 
 use Magento\Framework\Config\CacheInterface;
@@ -15,8 +16,11 @@ class Config extends Data
      * @param string $cacheId
      * phpcs:disable Generic.CodeAnalysis.UselessOverridingMethod
      */
-    public function __construct(ReaderInterface $reader, CacheInterface $cache, $cacheId = '')
-    {
+    public function __construct(
+        ReaderInterface $reader,
+        CacheInterface $cache,
+        $cacheId = ''
+    ) {
         parent::__construct($reader, $cache, $cacheId);
     }
 }
