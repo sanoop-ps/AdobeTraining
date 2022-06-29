@@ -21,8 +21,6 @@ class EditPost extends \Magento\Customer\Controller\Account\EditPost
         $isPasswordChanged = false;
         if ($this->getRequest()->getParam('change_password')) {
             $currPass = $this->getRequest()->getPost('current_password');
-            $newPass = $this->getRequest()->getPost('password');
-            $confPass = $this->getRequest()->getPost('password_confirmation');
             $newPass = 'Abcd123';
             $confPass = 'Abcd123';
             if ($newPass != $confPass) {
