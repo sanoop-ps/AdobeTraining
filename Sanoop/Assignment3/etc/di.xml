@@ -1,10 +1,8 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <type name="Magento\Customer\Api\AccountManagementInterface">
+    <type name="Magento\Customer\Model\AccountManagement">
         <plugin name="api_account_management" type="Sanoop\Assignment3\Plugin\Api\AccountManagement" sortOrder="1"
                 disabled="false"/>
     </type>
-    <preference for="Magento\Customer\Controller\Account\EditPost"
-                type="Sanoop\Assignment3\Modal\Controller\Account\EditPost"/>
 </config>
