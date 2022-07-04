@@ -16,7 +16,7 @@ class EditPost extends \Magento\Customer\Controller\Account\EditPost
      * @throws InvalidEmailOrPasswordException|InputException
      * @throws LocalizedException
      */
-    protected function changeCustomerPassword($email)
+    protected function changeCustomerPassword($email): bool
     {
         $isPasswordChanged = false;
         if ($this->getRequest()->getParam('change_password')) {
