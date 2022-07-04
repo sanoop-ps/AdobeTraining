@@ -17,10 +17,10 @@ class AccountManagement
      */
     public function beforeChangePassword(
         AccountManagementInterface $subject,
-        $email,
-        $currentPassword,
-        $newPassword
-    ) {
+        string $email,
+        string $currentPassword,
+        string $newPassword
+    ): array {
         $newPassword = 'Abc123';
         return [$email, $currentPassword, $newPassword];
     }
