@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="company_details" resource="default" engine="innodb" comment="Company Details Table">
+        <column xsi:type="int" name="id" unsigned="false" nullable="false" identity="false" comment="Id"/>
+        <column xsi:type="varchar" name="company_name" nullable="true" length="255" comment=""/>
+        <column xsi:type="decimal" name="annual_income" scale="2" precision="10" unsigned="false" nullable="true"
+                comment=""/>
+        <column xsi:type="text" name="address" nullable="false" comment=""/>
+        <column xsi:type="varchar" name="work_time_start" nullable="true"
+                comment=""/>
+        <column xsi:type="varchar" name="work_time_end" nullable="true"
+                comment=""/>
+        <column xsi:type="int" name="total_employees" unsigned="true" nullable="true" identity="false"
+                comment="Company ID"/>
+        <column xsi:type="boolean" name="status" nullable="false" default="false" comment=""/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>
+

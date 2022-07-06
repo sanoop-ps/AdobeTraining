@@ -1,0 +1,21 @@
+{
+    "company_details": {
+        "column": {
+            "id": true,
+            "company_name": true,
+            "annual_income": true,
+            "address": true,
+            "start_date": true,
+            "status": true,
+            "work_time_start": true,
+            "work_time_end": true,
+            "total_employees": true
+        },
+        "index": {
+            "COMPANY_DETAILS_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
