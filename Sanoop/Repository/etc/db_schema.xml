@@ -2,21 +2,40 @@
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
     <table name="company_details" resource="default" engine="innodb" comment="Company Details Table">
-        <column xsi:type="int" name="id" unsigned="false" nullable="false" identity="false" comment="Id"/>
-        <column xsi:type="varchar" name="company_name" nullable="true" length="255" comment=""/>
-        <column xsi:type="decimal" name="annual_income" scale="2" precision="10" unsigned="false" nullable="true"
-                comment=""/>
-        <column xsi:type="text" name="address" nullable="false" comment=""/>
-        <column xsi:type="varchar" name="work_time_start" nullable="true"
-                comment=""/>
-        <column xsi:type="varchar" name="work_time_end" nullable="true"
-                comment=""/>
-        <column xsi:type="int" name="total_employees" unsigned="true" nullable="true" identity="false"
-                comment="Company ID"/>
-        <column xsi:type="boolean" name="status" nullable="false" default="false" comment=""/>
+        <column xsi:type="int" name="id" unsigned="false" nullable="false" identity="true" comment="Company Id"/>
+        <column xsi:type="varchar" name="company_name" nullable="false" length="200" comment="Company Name"/>
+        <column xsi:type="decimal" name="annual_income" unsigned="false" nullable="false" scale="2"
+                comment="Annual Income"/>
+        <column xsi:type="varchar" name="address" nullable="false" length="100" comment="Company Address"/>
+        <column xsi:type="varchar" name="work_time_start" nullable="false" length="100"
+                comment="Company Working Time Start"/>
+        <column xsi:type="varchar" name="work_time_end" nullable="false" length="100"
+                comment="Company Working Time End"/>
+        <column xsi:type="int" name="total_employees" padding="10" unsigned="true" nullable="false" identity="false"
+                comment="Company Total Employees"/>
+        <column xsi:type="boolean" name="status" nullable="false" comment="Status"/>
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="id"/>
         </constraint>
+        <index referenceId="COMPANY_DETAILS_ID" indexType="btree">
+            <column name="id"/>
+        </index>
+    </table>
+    <table name="employees" resource="default" engine="innodb" comment="Employee details table">
+        <column xsi:type="int" name="id" unsigned="false" nullable="false" identity="true" comment="Employee ID"/>
+        <column xsi:type="int" name="company_id" unsigned="false" nullable="false" identity="false"
+                comment="Company ID"/>
+        <column xsi:type="varchar" name="Name" nullable="false" length="200" comment="Employee Name"/>
+        <column xsi:type="date" name="dob" nullable="false" comment="Date Birth"/>
+        <column xsi:type="varchar" name="position" nullable="false" length="200" comment="Position"/>
+        <column xsi:type="float" name="salary" unsigned="false" nullable="false" comment="Salary"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="EMPLOYEES_COMPANY_ID_COMPANY_DETAILS_ID" table="employees"
+                    column="company_id" referenceTable="company_details" referenceColumn="id" onDelete="CASCADE"/>
+        <index referenceId="EMPLOYEES_ID" indexType="btree">
+            <column name="id"/>
+        </index>
     </table>
 </schema>
-

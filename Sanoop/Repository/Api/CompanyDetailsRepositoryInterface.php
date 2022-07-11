@@ -9,4 +9,10 @@ interface CompanyDetailsRepositoryInterface
      * @return mixed
      */
     public function getById(int $id);
+
+    /**
+     * @param int $id
+     * @return mixed
+     */
+    public function getCompanyDetails(int $id);
 }
