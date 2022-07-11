@@ -2,15 +2,18 @@
 
 namespace Sanoop\Repository\Model;
 
+use Magento\Framework\App\ResourceConnection;
 use Sanoop\Repository\Api\CompanyDetailsRepositoryInterface;
 
 class CompanyDetailsRepository implements CompanyDetailsRepositoryInterface
 {
     private CompanyDetailsFactory $companyDetailsFactory;
+    private ResourceConnection $resourceConnection;
 
-    public function __construct(CompanyDetailsFactory $companyDetailsFactory)
+    public function __construct(CompanyDetailsFactory $companyDetailsFactory, ResourceConnection $resourceConnection)
     {
         $this->companyDetailsFactory = $companyDetailsFactory;
+        $this->resourceConnection = $resourceConnection;
     }
 
     /**
@@ -23,4 +26,22 @@ class CompanyDetailsRepository implements CompanyDetailsRepositoryInterface
         return $company->load($id);
     }
 
+    /**
+     * @param int $id
+     * @return mixed
+     */
+    public function getCompanyDetails(int $id)
+    {
+        $connection = $this->resourceConnection->getConnection();
+        $select = $connection->select()
+            ->from(
+                ['main_table' => 'company_details'],
+            )
+            ->join(
+                ['sub_table' => 'employees'],
+                'main_table.id = sub_table.company_id'
+            )->where('main_table.id = ?', $id);
+
+        return $connection->fetchAll($select);
+    }
 }

@@ -4,13 +4,12 @@ namespace Sanoop\Repository\Controller\Index;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
-use Magento\Framework\App\ResponseInterface;
+use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Framework\Controller\Result\Json;
 use Magento\Framework\Controller\Result\JsonFactory;
-use Magento\Framework\Controller\ResultInterface;
 use Sanoop\Repository\Model\CompanyDetailsRepository;
 
-class Index extends Action
+class ArrayResult extends Action implements HttpGetActionInterface
 {
     private CompanyDetailsRepository $companyDetailsRepository;
     private JsonFactory $jsonFactory;
@@ -31,16 +30,16 @@ class Index extends Action
     }
 
     /**
-     * @return ResponseInterface|Json|ResultInterface
+     * Execute action based on request and return result
+     *
+     * @return Json
      */
     public function execute()
     {
-        $id = $this->getRequest()->getParam('id');
-        $data = $this->companyDetailsRepository->getById($id);
+        $row1 = $this->companyDetailsRepository->getById(1);
+        $row2 = $this->companyDetailsRepository->getById(2);
+        $data = [$row1->getData(), $row2->getData()];
         $result = $this->jsonFactory->create();
-        if ($data->getData()) {
-            return $result->setData($data);
-        }
-        return $result->setData(__('No Data found!!'));
+        return $result->setData($data);
     }
 }
