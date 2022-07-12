@@ -55,7 +55,9 @@ class CompanyDetailsRepository implements CompanyDetailsRepositoryInterface
      * @param int $id
      * @return CompanyDetailsInterface
      */
-    public function getCompanyDetailsWithEmployees(int $id)
+    public function getCompanyDetailsWithEmployees(
+        int $id
+    )  //Working On it --- NOT COMPLETED - referenced - Magento\Customer\Model\ResourceModel
     {
         $groupInterfaceName = EmployeesInterface::class;
         $modelData = $this->companyDetailsFactory->create()->load($id);
