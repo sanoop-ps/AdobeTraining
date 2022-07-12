@@ -21,7 +21,7 @@
         "column": {
             "id": true,
             "company_id": true,
-            "Name": true,
+            "name": true,
             "dob": true,
             "position": true,
             "salary": true

@@ -8,25 +8,25 @@ use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\Controller\Result\JsonFactory;
 use Magento\Framework\Controller\ResultInterface;
 use Magento\Framework\Exception\NotFoundException;
-use Sanoop\Repository\Model\CompanyDetailsRepository;
+use Sanoop\Repository\Api\CompanyDetailsRepositoryInterface;
 
 class CompanyDetailsJoin extends Action
 {
-    private CompanyDetailsRepository $companyDetailsRepository;
+    private CompanyDetailsRepositoryInterface $companyDetailsRepositoryInterface;
     private JsonFactory $jsonFactory;
 
     /**
      * @param Context $context
      * @param JsonFactory $jsonFactory
-     * @param CompanyDetailsRepository $companyDetailsRepository
+     * @param CompanyDetailsRepositoryInterface $companyDetailsRepositoryInterface
      */
     public function __construct(
         Context $context,
         JsonFactory $jsonFactory,
-        CompanyDetailsRepository $companyDetailsRepository
+        CompanyDetailsRepositoryInterface $companyDetailsRepositoryInterface
     ) {
         $this->jsonFactory = $jsonFactory;
-        $this->companyDetailsRepository = $companyDetailsRepository;
+        $this->companyDetailsRepositoryInterface = $companyDetailsRepositoryInterface;
         parent::__construct($context);
     }
 
@@ -38,7 +38,7 @@ class CompanyDetailsJoin extends Action
      */
     public function execute()
     {
-        $data = $this->companyDetailsRepository->getCompanyDetails(1);
+        $data = $this->companyDetailsRepositoryInterface->getCompanyDetailsWithEmployees(1);
         $result = $this->jsonFactory->create();
         return $result->setData($data);
     }
