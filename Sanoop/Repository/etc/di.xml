@@ -3,4 +3,8 @@
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="Sanoop\Repository\Api\CompanyDetailsRepositoryInterface"
                 type="Sanoop\Repository\Model\CompanyDetailsRepository"/>
+    <preference for="Sanoop\Repository\Api\Data\CompanyDetailsInterface"
+                type="Sanoop\Repository\Model\CompanyDetails"/>
+    <preference for="Sanoop\Repository\Api\Data\EmployeesInterface"
+                type="Sanoop\Repository\Model\Employees"/>
 </config>

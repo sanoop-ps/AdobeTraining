@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
+    <extension_attributes for="Sanoop\Repository\Api\Data\CompanyDetailsInterface">
+        <attribute code="company_employee_details" type="Sanoop\Repository\Api\Data\EmployeesInterface">
+            <join reference_table="employee" reference_field="company_id" join_on_field="id">
+                <field>company_id</field>
+                <field>name</field>
+                <field>dob</field>
+                <field>position</field>
+                <field>salary</field>
+            </join>
+        </attribute>
+    </extension_attributes>
+</config>

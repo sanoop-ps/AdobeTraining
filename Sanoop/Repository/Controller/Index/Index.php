@@ -35,11 +35,15 @@ class Index extends Action
      */
     public function execute()
     {
-        $id = $this->getRequest()->getParam('id');
-        $data = $this->companyDetailsRepository->getById($id);
         $result = $this->jsonFactory->create();
-        if ($data->getData()) {
-            return $result->setData($data);
+        $id = $this->getRequest()->getParam('id');
+        if ($id) {
+            $data = $this->companyDetailsRepository->getById($id);
+            if ($data->getData()) {
+                return $result->setData($data);
+            }
+        } else {
+            return $result->setData(__('Parameter Not found!!'));
         }
         return $result->setData(__('No Data found!!'));
     }

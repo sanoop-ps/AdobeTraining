@@ -25,7 +25,7 @@
         <column xsi:type="int" name="id" unsigned="false" nullable="false" identity="true" comment="Employee ID"/>
         <column xsi:type="int" name="company_id" unsigned="false" nullable="false" identity="false"
                 comment="Company ID"/>
-        <column xsi:type="varchar" name="Name" nullable="false" length="200" comment="Employee Name"/>
+        <column xsi:type="varchar" name="name" nullable="false" length="200" comment="Employee Name"/>
         <column xsi:type="date" name="dob" nullable="false" comment="Date Birth"/>
         <column xsi:type="varchar" name="position" nullable="false" length="200" comment="Position"/>
         <column xsi:type="float" name="salary" unsigned="false" nullable="false" comment="Salary"/>

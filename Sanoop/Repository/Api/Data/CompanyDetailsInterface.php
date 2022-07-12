@@ -2,7 +2,9 @@
 
 namespace Sanoop\Repository\Api\Data;
 
-interface CompanyDetailsInterface
+use Magento\Framework\Api\ExtensibleDataInterface;
+
+interface CompanyDetailsInterface extends ExtensibleDataInterface
 {
     /**
      * @return int
@@ -95,4 +97,19 @@ interface CompanyDetailsInterface
      * @return void
      */
     public function setStatus(bool $status);
+
+    /**
+     * Retrieve existing extension attributes object or create a new one.
+     *
+     * @return EmployeesInterface|null
+     */
+    public function getExtensionAttributes();
+
+    /**
+     * Set an extension attributes object.
+     *
+     * @param EmployeesInterface $extensionAttributes
+     * @return $this
+     */
+    public function setExtensionAttributes(EmployeesInterface $extensionAttributes);
 }
