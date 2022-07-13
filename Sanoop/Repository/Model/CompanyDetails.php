@@ -1,11 +1,12 @@
 <?php
+declare(strict_types=1);
 
 namespace Sanoop\Repository\Model;
 
 use Magento\Framework\Model\AbstractExtensibleModel;
 use Sanoop\Repository\Api\Data\CompanyDetailsInterface;
-use Sanoop\Repository\Api\Data\EmployeesInterface;
 use Sanoop\Repository\Model\ResourceModel\CompanyDetails as ResourceModel;
+use Sanoop\Repository\Api\Data\CompanyDetailsExtensionInterface;
 
 class CompanyDetails extends AbstractExtensibleModel implements CompanyDetailsInterface
 {
@@ -53,7 +54,7 @@ class CompanyDetails extends AbstractExtensibleModel implements CompanyDetailsIn
     /**
      * @inheritDoc
      */
-    public function setAnnualIncome(int $annualIncome)
+    public function setAnnualIncome(string $annualIncome)
     {
         return $this->setData(self::ANNUAL_INCOME, $annualIncome);
     }
@@ -117,7 +118,7 @@ class CompanyDetails extends AbstractExtensibleModel implements CompanyDetailsIn
     /**
      * @inheritDoc
      */
-    public function setTotalEmployees(int $totalEmployees)
+    public function setTotalEmployees(string $totalEmployees)
     {
         return $this->setData(self::TOTAL_EMPLOYEE, $totalEmployees);
     }
@@ -133,13 +134,15 @@ class CompanyDetails extends AbstractExtensibleModel implements CompanyDetailsIn
     /**
      * @inheritDoc
      */
-    public function setStatus(bool $status)
+    public function setStatus(string $status)
     {
         return $this->setData(self::STATUS, $status);
     }
 
     /**
-     * @inheritDoc
+     * Retrieve existing extension attributes object or create a new one.
+     *
+     * @return \Sanoop\Repository\Api\Data\CompanyDetailsExtensionInterface|null
      */
     public function getExtensionAttributes()
     {
@@ -147,12 +150,14 @@ class CompanyDetails extends AbstractExtensibleModel implements CompanyDetailsIn
     }
 
     /**
-     * @inheritDoc
+     * Set an extension attributes object.
+     *
+     * @param \Sanoop\Repository\Api\Data\CompanyDetailsExtensionInterface $extensionAttributes
+     * @return $this
      */
-    public function setExtensionAttributes(EmployeesInterface $extensionAttributes)
-    {
+    public function setExtensionAttributes(
+        \Sanoop\Repository\Api\Data\CompanyDetailsExtensionInterface $extensionAttributes
+    ) {
         return $this->_setExtensionAttributes($extensionAttributes);
     }
-
 }
-

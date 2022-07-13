@@ -1,18 +1,29 @@
 <?php
+declare(strict_types=1);
 
 namespace Sanoop\Repository\Model;
 
-use Magento\Framework\Model\AbstractModel;
+use Magento\Framework\Model\AbstractExtensibleModel;
 use Sanoop\Repository\Api\Data\EmployeesInterface;
 use Sanoop\Repository\Model\ResourceModel\Employees as ResourceModel;
 
-class Employees extends AbstractModel implements EmployeesInterface
+class Employees extends AbstractExtensibleModel implements EmployeesInterface
 {
     const COMPANY_ID = 'company_id';
     const NAME = 'name';
     const DOB = 'dob';
     const POSITION = 'position';
     const SALARY = 'salary';
+
+    /**
+     * Initialize magento model.
+     *
+     * @return void
+     */
+    protected function _construct()
+    {
+        $this->_init(ResourceModel::class);
+    }
 
     /**
      * @inheritDoc
@@ -94,13 +105,25 @@ class Employees extends AbstractModel implements EmployeesInterface
         $this->setData(self::SALARY, $salary);
     }
 
-    /**
-     * Initialize magento model.
-     *
-     * @return void
-     */
-    protected function _construct()
-    {
-        $this->_init(ResourceModel::class);
-    }
+//    /**
+//     * Retrieve existing extension attributes object or create a new one.
+//     *
+//     * @return \Sanoop\Repository\Api\Data\EmployeesExtension|null
+//     */
+//    public function getExtensionAttributes()
+//    {
+//        return $this->_getExtensionAttributes();
+//    }
+//
+//    /**
+//     * Set an extension attributes object.
+//     *
+//     * @param \Sanoop\Repository\Api\Data\EmployeesExtension $extensionAttributes
+//     * @return $this
+//     */
+//    public function setExtensionAttributes(
+//        \Sanoop\Repository\Api\Data\EmployeesExtension $extensionAttributes
+//    ) {
+//        return $this->_setExtensionAttributes($extensionAttributes);
+//    }
 }

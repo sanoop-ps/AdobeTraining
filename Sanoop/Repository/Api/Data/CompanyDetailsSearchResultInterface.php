@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Sanoop\Repository\Api\Data;
 
@@ -7,13 +8,13 @@ use Magento\Framework\Api\SearchResultsInterface;
 interface CompanyDetailsSearchResultInterface extends SearchResultsInterface
 {
     /**
-     * @return CompanyDetailsInterface
+     * @return CompanyDetailsInterface[]
      */
-    public function getItems(): CompanyDetailsInterface;
+    public function getItems();
 
     /**
-     * @param array $items
-     * @return CompanyDetailsSearchResultInterface
+     * @param CompanyDetailsInterface[] $items
+     * @return $this
      */
     public function setItems(array $items);
 }
