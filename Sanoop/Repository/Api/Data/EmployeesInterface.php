@@ -1,11 +1,11 @@
 <?php
+declare(strict_types=1);
 
 namespace Sanoop\Repository\Api\Data;
 
-use Magento\Framework\Api\ExtensionAttributesInterface;
-use Magento\Tests\NamingConvention\true\string;
+use Magento\Framework\Api\ExtensibleDataInterface;
 
-interface EmployeesInterface extends ExtensionAttributesInterface
+interface EmployeesInterface extends ExtensibleDataInterface
 {
     /**
      * @return int
@@ -72,5 +72,20 @@ interface EmployeesInterface extends ExtensionAttributesInterface
      * @return void
      */
     public function setSalary(string $salary);
+
+//    /**
+//     * Retrieve existing extension attributes object or create a new one.
+//     *
+//     * @return \Sanoop\Repository\Api\Data\EmployeesExtension|null
+//     */
+//    public function getExtensionAttributes();
+//
+//    /**
+//     * Set an extension attributes object.
+//     *
+//     * @param \Sanoop\Repository\Api\Data\EmployeesExtension|null $extensionAttributes
+//     * @return $this
+//     */
+//    public function setExtensionAttributes(\Sanoop\Repository\Api\Data\EmployeesExtension $extensionAttributes);
 
 }

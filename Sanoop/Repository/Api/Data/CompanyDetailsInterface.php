@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Sanoop\Repository\Api\Data;
 
@@ -36,10 +37,10 @@ interface CompanyDetailsInterface extends ExtensibleDataInterface
 
 
     /**
-     * @param int $annualIncome
+     * @param string $annualIncome
      * @return void
      */
-    public function setAnnualIncome(int $annualIncome);
+    public function setAnnualIncome(string $annualIncome);
 
 
     /**
@@ -81,10 +82,10 @@ interface CompanyDetailsInterface extends ExtensibleDataInterface
     public function getTotalEmployees();
 
     /**
-     * @param int $totalEmployees
+     * @param string $totalEmployees
      * @return void
      */
-    public function setTotalEmployees(int $totalEmployees);
+    public function setTotalEmployees(string $totalEmployees);
 
 
     /**
@@ -93,23 +94,23 @@ interface CompanyDetailsInterface extends ExtensibleDataInterface
     public function getStatus();
 
     /**
-     * @param bool $status
+     * @param string $status
      * @return void
      */
-    public function setStatus(bool $status);
+    public function setStatus(string $status);
 
     /**
      * Retrieve existing extension attributes object or create a new one.
      *
-     * @return EmployeesInterface|null
+     * @return \Sanoop\Repository\Api\Data\CompanyDetailsExtensionInterface|null
      */
     public function getExtensionAttributes();
 
     /**
      * Set an extension attributes object.
      *
-     * @param EmployeesInterface $extensionAttributes
+     * @param \Sanoop\Repository\Api\Data\CompanyDetailsExtensionInterface|null $extensionAttributes
      * @return $this
      */
-    public function setExtensionAttributes(EmployeesInterface $extensionAttributes);
+    public function setExtensionAttributes(\Sanoop\Repository\Api\Data\CompanyDetailsExtensionInterface $extensionAttributes);
 }

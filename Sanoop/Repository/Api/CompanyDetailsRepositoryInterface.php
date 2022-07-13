@@ -1,27 +1,28 @@
 <?php
+declare(strict_types=1);
 
 namespace Sanoop\Repository\Api;
 
-use Magento\Framework\Api\SearchCriteriaInterface;
+use Magento\Framework\Api\Search\SearchCriteriaInterface;
 use Sanoop\Repository\Api\Data\CompanyDetailsInterface;
 
 interface CompanyDetailsRepositoryInterface
 {
     /**
-     * @param int $id
+     * @param string $id
      * @return CompanyDetailsInterface
      */
-    public function getById(int $id);
+    public function getById(string $id);
 
-    /**
-     * @param int $id
-     * @return CompanyDetailsInterface
-     */
-    public function getCompanyDetailsWithEmployees(int $id);
+//    /**
+//     * @param SearchCriteriaInterface $searchCriteria
+//     * @return mixed
+//     */
+//    public function getList(SearchCriteriaInterface $searchCriteria);
 
-    /**
-     * @param SearchCriteriaInterface $searchCriteria
-     * @return mixed
-     */
-    public function getList(SearchCriteriaInterface $searchCriteria);
+//    /**
+//     * @param int $id
+//     * @return CompanyDetailsInterface
+//     */
+//    public function getCompanyWithEmployees(int $id);
 }
