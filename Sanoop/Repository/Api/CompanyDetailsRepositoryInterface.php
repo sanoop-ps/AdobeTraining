@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace Sanoop\Repository\Api;
 
-use Magento\Framework\Api\Search\SearchCriteriaInterface;
 use Sanoop\Repository\Api\Data\CompanyDetailsInterface;
 
 interface CompanyDetailsRepositoryInterface
