@@ -7,11 +7,11 @@
             <resource ref="self"/>
         </resources>
     </route>
-<!--    <route url="/V1/companyDetailsWithEmployeesById/:id" method="GET">-->
-<!--        <service class="Sanoop\Repository\Api\CompanyDetailsRepositoryInterface"-->
-<!--                 method="getCompanyWithEmployees"/>-->
-<!--        <resources>-->
-<!--            <resource ref="self"/>-->
-<!--        </resources>-->
-<!--    </route>-->
+    <route url="/V1/EmployeesById/:id" method="GET">
+        <service class="Sanoop\Repository\Api\EmployeesRepositoryInterface"
+                 method="getById"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+    </route>
 </routes>

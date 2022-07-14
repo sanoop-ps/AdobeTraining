@@ -4,4 +4,7 @@
     <extension_attributes for="Sanoop\Repository\Api\Data\CompanyDetailsInterface">
         <attribute code="company_employees_attributes" type="Sanoop\Repository\Api\Data\EmployeesInterface[]"/>
     </extension_attributes>
+    <extension_attributes for="Sanoop\Repository\Api\Data\EmployeesInterface">
+        <attribute code="employees_company_attributes" type="Sanoop\Repository\Api\Data\CompanyDetailsInterface"/>
+    </extension_attributes>
 </config>

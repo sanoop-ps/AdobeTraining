@@ -4,8 +4,10 @@
     <preference for="Sanoop\Repository\Api\Data\CompanyDetailsInterface" type="Sanoop\Repository\Model\CompanyDetails"/>
     <preference for="Sanoop\Repository\Api\Data\EmployeesInterface" type="Sanoop\Repository\Model\Employees"/>
     <preference for="Sanoop\Repository\Api\EmployeesRepositoryInterface" type="Sanoop\Repository\Model\EmployeesRepository"/>
-    <preference for="Sanoop\Repository\Api\Data\CompanyDetailsSearchResultInterface" type="Sanoop\Repository\Model\CompanyDetailsSearch"/>
     <type name="Sanoop\Repository\Api\CompanyDetailsRepositoryInterface">
         <plugin name="model_company_details_repository" type="Sanoop\Repository\Plugin\Model\CompanyDetailsRepository" sortOrder="1" disabled="false"/>
+    </type>
+    <type name="Sanoop\Repository\Api\EmployeesRepositoryInterface">
+        <plugin name="model_employees_repository" type="Sanoop\Repository\Plugin\Model\EmployeesRepository" sortOrder="1" disabled="false"/>
     </type>
 </config>

@@ -38,7 +38,7 @@ class CompanyDetailsJoin extends Action
      */
     public function execute()
     {
-        $data = $this->companyDetailsRepositoryInterface->getList();
+        $data = $this->companyDetailsRepositoryInterface->getById(1);
         $result = $this->jsonFactory->create();
         return $result->setData($data);
     }

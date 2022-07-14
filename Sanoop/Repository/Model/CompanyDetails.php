@@ -140,9 +140,7 @@ class CompanyDetails extends AbstractExtensibleModel implements CompanyDetailsIn
     }
 
     /**
-     * Retrieve existing extension attributes object or create a new one.
-     *
-     * @return \Sanoop\Repository\Api\Data\CompanyDetailsExtensionInterface|null
+     * @inheritDoc
      */
     public function getExtensionAttributes()
     {
@@ -150,10 +148,7 @@ class CompanyDetails extends AbstractExtensibleModel implements CompanyDetailsIn
     }
 
     /**
-     * Set an extension attributes object.
-     *
-     * @param \Sanoop\Repository\Api\Data\CompanyDetailsExtensionInterface $extensionAttributes
-     * @return $this
+     * @inheritDoc
      */
     public function setExtensionAttributes(
         \Sanoop\Repository\Api\Data\CompanyDetailsExtensionInterface $extensionAttributes

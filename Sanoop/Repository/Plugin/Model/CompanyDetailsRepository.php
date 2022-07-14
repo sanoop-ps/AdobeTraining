@@ -9,7 +9,7 @@ use Sanoop\Repository\Model\EmployeesRepository;
 class CompanyDetailsRepository
 {
     public CompanyDetailsExtensionFactory $companyDetailsExtensionFactory;
-    public EmployeesRepository $employeesRepositoryInterface;
+    public EmployeesRepository $employeesRepository;
 
     public function __construct(CompanyDetailsExtensionFactory $companyDetailsExtensionFactory, EmployeesRepository $employeesRepository)
     {
@@ -20,7 +20,7 @@ class CompanyDetailsRepository
     /**
      * @param \Sanoop\Repository\Model\CompanyDetailsRepository $subject
      * @param $result
-     * @return void
+     * @return \Sanoop\Repository\Api\Data\CompanyDetailsInterface
      */
     public function afterGetById(
         \Sanoop\Repository\Api\CompanyDetailsRepositoryInterface $subject,
@@ -28,7 +28,7 @@ class CompanyDetailsRepository
     ) {
         $extensionAttribute=$resultData->getExtensionAttributes();
         $companyExtension=$extensionAttribute ? $extensionAttribute: $this->companyDetailsExtensionFactory->create();
-        $employeesData=$this->employeesRepository->getById((string)$resultData->getId());
+        $employeesData=$this->employeesRepository->getByCompanyId((int)$resultData->getId());
         $companyExtension->setCompanyEmployeesAttributes($employeesData);
         return $resultData->setExtensionAttributes($companyExtension);
     }
