@@ -4,13 +4,13 @@ namespace Sanoop\Repository\Model;
 
 use Sanoop\Repository\Api\Data\EmployeesInterfaceFactory;
 use Sanoop\Repository\Api\EmployeesRepositoryInterface;
-use Sanoop\Repository\Model\ResourceModel\Employees\Collection;
 use Sanoop\Repository\Model\ResourceModel\Employees\CollectionFactory;
 
 class EmployeesRepository implements EmployeesRepositoryInterface
 {
     public EmployeesInterfaceFactory $employeesInterfaceFactory;
     public EmployeesFactory $employeesFactory;
+    public CollectionFactory $employeesCollectionFactory;
 
     public function __construct(
         EmployeesFactory $employeesFactory,

@@ -8,7 +8,7 @@ interface EmployeesRepositoryInterface
 {
     /**
      * @param int $id
-     * @return EmployeesInterface[]
+     * @return EmployeesInterface
      */
     public function getById(int $id);
 
