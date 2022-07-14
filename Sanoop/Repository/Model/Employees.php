@@ -30,15 +30,15 @@ class Employees extends AbstractExtensibleModel implements EmployeesInterface
      */
     public function getCompanyId()
     {
-        $this->_getData(self::COMPANY_ID);
+        return $this->getData(self::COMPANY_ID);
     }
 
     /**
      * @inheritDoc
      */
-    public function setCompanyId(int $companyId)
+    public function setCompanyId($companyId)
     {
-        $this->setData(self::COMPANY_ID, $companyId);
+        return $this->setData(self::COMPANY_ID, $companyId);
     }
 
     /**
@@ -46,15 +46,15 @@ class Employees extends AbstractExtensibleModel implements EmployeesInterface
      */
     public function getName()
     {
-        $this->_getData(self::NAME);
+        return $this->_getData(self::NAME);
     }
 
     /**
      * @inheritDoc
      */
-    public function setName(string $name)
+    public function setName($name)
     {
-        $this->setData(self::NAME, $name);
+        return $this->setData(self::NAME, $name);
     }
 
     /**
@@ -62,7 +62,7 @@ class Employees extends AbstractExtensibleModel implements EmployeesInterface
      */
     public function getDob()
     {
-        $this->_getData(self::DOB);
+        return $this->_getData(self::DOB);
     }
 
     /**
@@ -70,7 +70,7 @@ class Employees extends AbstractExtensibleModel implements EmployeesInterface
      */
     public function setDob(string $dob)
     {
-        $this->setData(self::DOB, $dob);
+        return $this->setData(self::DOB, $dob);
     }
 
     /**
@@ -78,7 +78,7 @@ class Employees extends AbstractExtensibleModel implements EmployeesInterface
      */
     public function getPosition()
     {
-        $this->_getData(self::POSITION);
+        return $this->_getData(self::POSITION);
     }
 
     /**
@@ -86,7 +86,7 @@ class Employees extends AbstractExtensibleModel implements EmployeesInterface
      */
     public function setPosition(string $position)
     {
-        $this->setData(self::POSITION, $position);
+        return $this->setData(self::POSITION, $position);
     }
 
     /**
@@ -94,7 +94,7 @@ class Employees extends AbstractExtensibleModel implements EmployeesInterface
      */
     public function getSalary()
     {
-        $this->_getData(self::SALARY);
+        return $this->_getData(self::SALARY);
     }
 
     /**
@@ -102,28 +102,23 @@ class Employees extends AbstractExtensibleModel implements EmployeesInterface
      */
     public function setSalary(string $salary)
     {
-        $this->setData(self::SALARY, $salary);
+        return $this->setData(self::SALARY, $salary);
     }
 
-//    /**
-//     * Retrieve existing extension attributes object or create a new one.
-//     *
-//     * @return \Sanoop\Repository\Api\Data\EmployeesExtension|null
-//     */
-//    public function getExtensionAttributes()
-//    {
-//        return $this->_getExtensionAttributes();
-//    }
-//
-//    /**
-//     * Set an extension attributes object.
-//     *
-//     * @param \Sanoop\Repository\Api\Data\EmployeesExtension $extensionAttributes
-//     * @return $this
-//     */
-//    public function setExtensionAttributes(
-//        \Sanoop\Repository\Api\Data\EmployeesExtension $extensionAttributes
-//    ) {
-//        return $this->_setExtensionAttributes($extensionAttributes);
-//    }
+    /**
+     * @inheritDoc
+     */
+    public function getExtensionAttributes()
+    {
+        return $this->_getExtensionAttributes();
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function setExtensionAttributes(
+        \Sanoop\Repository\Api\Data\EmployeesExtensionInterface $extensionAttributes
+    ) {
+        return $this->_setExtensionAttributes($extensionAttributes);
+    }
 }

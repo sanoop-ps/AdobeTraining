@@ -38,7 +38,7 @@ interface EmployeesInterface extends ExtensibleDataInterface
      * @param string $name
      * @return void
      */
-    public function setName(string $name);
+    public function setName($name);
 
     /**
      * @return string
@@ -73,19 +73,19 @@ interface EmployeesInterface extends ExtensibleDataInterface
      */
     public function setSalary(string $salary);
 
-//    /**
-//     * Retrieve existing extension attributes object or create a new one.
-//     *
-//     * @return \Sanoop\Repository\Api\Data\EmployeesExtension|null
-//     */
-//    public function getExtensionAttributes();
-//
-//    /**
-//     * Set an extension attributes object.
-//     *
-//     * @param \Sanoop\Repository\Api\Data\EmployeesExtension|null $extensionAttributes
-//     * @return $this
-//     */
-//    public function setExtensionAttributes(\Sanoop\Repository\Api\Data\EmployeesExtension $extensionAttributes);
+    /**
+     * Retrieve existing extension attributes object or create a new one.
+     *
+     * @return \Sanoop\Repository\Api\Data\EmployeesExtensionInterface|null
+     */
+    public function getExtensionAttributes();
+
+    /**
+     * Set an extension attributes object.
+     *
+     * @param \Sanoop\Repository\Api\Data\EmployeesExtensionInterface|null $extensionAttributes
+     * @return $this
+     */
+    public function setExtensionAttributes(\Sanoop\Repository\Api\Data\EmployeesExtensionInterface $extensionAttributes);
 
 }
