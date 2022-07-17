@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Sanoop\Assignment4\Api\CompanyDetailsRepositoryInterface" type="Sanoop\Assignment4\Model\CompanyDetailsRepository"/>
+    <preference for="Sanoop\Assignment4\Api\Data\CompanyDetailsInterface" type="Sanoop\Assignment4\Model\CompanyDetails"/>
+    <preference for="Sanoop\Assignment4\Api\Data\CompanyDetailsSearchResultInterface" type="Sanoop\Assignment4\Model\CompanyDetailsSearchResult"/>
+    <preference for="Sanoop\Assignment4\Api\Data\EmployeesSearchResultInterface" type="Sanoop\Assignment4\Model\EmployeesSearchResult"/>
+    <preference for="Sanoop\Assignment4\Api\Data\EmployeesInterface" type="Sanoop\Assignment4\Model\Employees"/>
+    <preference for="Sanoop\Assignment4\Api\EmployeesRepositoryInterface" type="Sanoop\Assignment4\Model\EmployeesRepository"/>
+    <type name="Sanoop\Assignment4\Api\CompanyDetailsRepositoryInterface">
+        <plugin name="api_company_details_repository" type="Sanoop\Assignment4\Plugin\Api\CompanyDetailsRepository" sortOrder="1" disabled="false"/>
+    </type>
+    <type name="Sanoop\Assignment4\Api\EmployeesRepositoryInterface">
+        <plugin name="api_employees_repository" type="Sanoop\Assignment4\Plugin\Api\EmployeesRepository" sortOrder="1" disabled="false"/>
+    </type>
+</config>

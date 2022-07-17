@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/companyDetailsGetList/search" method="GET">
+        <service class="Sanoop\Assignment4\Api\CompanyDetailsRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+    </route>
+    <route url="/V1/employeesGetList/search" method="GET">
+        <service class="Sanoop\Assignment4\Api\EmployeesRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+    </route>
+</routes>

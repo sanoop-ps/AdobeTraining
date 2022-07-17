@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
+    <extension_attributes for="Sanoop\Assignment4\Api\Data\CompanyDetailsInterface">
+        <attribute code="company_employees_attributes" type="Sanoop\Assignment4\Api\Data\EmployeesInterface[]"/>
+    </extension_attributes>
+    <extension_attributes for="Sanoop\Assignment4\Api\Data\EmployeesInterface">
+        <attribute code="employees_company_attributes" type="Sanoop\Assignment4\Api\Data\CompanyDetailsInterface"/>
+    </extension_attributes>
+</config>
