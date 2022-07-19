@@ -17,4 +17,18 @@ interface CompanyDetailsRepositoryInterface
      * @throws \Magento\Framework\Exception\LocalizedException
      */
     public function getList(\Magento\Framework\Api\SearchCriteriaInterface $searchCriteria);
+
+    /**
+     * @return bool
+     */
+    public function save($companyDetails);
+
+    /**
+     *
+     * @param int $companyDetailsId
+     * @return bool true on success
+     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     * @throws \Magento\Framework\Exception\LocalizedException
+     */
+    public function deleteById($companyDetailsId);
 }

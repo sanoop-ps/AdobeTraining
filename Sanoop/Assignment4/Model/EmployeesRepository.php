@@ -10,12 +10,34 @@ use Sanoop\Assignment4\Model\ResourceModel\Employees\CollectionFactory;
 class EmployeesRepository implements \Sanoop\Assignment4\Api\EmployeesRepositoryInterface
 {
 
+    /**
+     * @var EmployeesFactory
+     */
     public EmployeesFactory $employeesFactory;
+    /**
+     * @var EmployeesInterfaceFactory
+     */
     public EmployeesInterfaceFactory $employeesInterfaceFactory;
+    /**
+     * @var CollectionFactory
+     */
     public CollectionFactory $employeesCollectionFactory;
+    /**
+     * @var CollectionProcessorInterface
+     */
     public CollectionProcessorInterface $collectionProcessor;
+    /**
+     * @var EmployeesSearchResultInterfaceFactory
+     */
     public EmployeesSearchResultInterfaceFactory $searchResultsFactory;
 
+    /**
+     * @param EmployeesInterfaceFactory $employeesInterfaceFactory
+     * @param CollectionFactory $employeesCollectionFactory
+     * @param CollectionProcessorInterface $collectionProcessor
+     * @param EmployeesSearchResultInterfaceFactory $searchResultsFactory
+     * @param EmployeesFactory $employeesFactory
+     */
     public function __construct(
         EmployeesInterfaceFactory $employeesInterfaceFactory,
         CollectionFactory $employeesCollectionFactory,

@@ -1,0 +1,42 @@
+<?php $datas=$this->getAllData(); ?>
+
+<div>
+    <a href="<?php echo $this->getUrl('company_details/index/create'); ?>">Create New</a>
+</div>
+<table border="1">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Company Name</th>
+            <th>Annual Income</th>
+            <th>Address</th>
+            <th>Work Time Start</th>
+            <th>Work Time End</th>
+            <th>Total Employees</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($datas as $key => $data) {?>
+        <tr>
+            <td><?php echo $key+1 ?></td>
+            <td><?php echo $data->getCompanyName() ?></td>
+            <td><?php echo $data->getAnnualIncome() ?></td>
+            <td><?php echo $data->getAddress() ?></td>
+            <td><?php echo $data->getWorkTimeStart() ?></td>
+            <td><?php echo $data->getWorkTimeEnd() ?></td>
+            <td><?php echo $data->getTotalEmployees() ?></td>
+            <td><?php if($data->getStatus()){ echo 'Active';}else{ echo 'Inactive';} ?></td>
+            <td>
+                <a href="<?php echo $this->getUrl('company_details/index/edit').'id/'.$data->getId(); ?>">Edit</a>
+                <a href="<?php echo $this->getUrl('company_details/index/delete').'id/'.$data->getId(); ?>">Delete</a>
+            </td>
+        </tr>
+    <?php }?>
+    </tbody>
+</table>
+
+
+
+
