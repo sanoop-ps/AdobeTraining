@@ -1,0 +1,16 @@
+<?php $data=$this->getDataById() ?>
+<form action="<?php echo $this->getUrl('company_details/index/save'); ?>" method="post">
+    <label for="company_name">Company Name</label>
+    <input type="text" name="company_name" id="company_name"/>
+    <label for="annual_income">Annual Income</label>
+    <input type="text" name="annual_income" id="annual_income"/>
+    <label for="address">Address</label>
+    <input type="text" name="address" id="address"/>
+    <label for="work_time_start">Work Time Start</label>
+    <input type="text" name="work_time_start" id="work_time_start"/>
+    <label for="work_time_end">Work Time End</label>
+    <input type="text" name="work_time_end" id="work_time_end"/>
+    <label for="total_employees">Total Employees</label>
+    <input type="text" name="total_employees" id="total_employees" />
+    <button type="submit">Update</button>
+</form>
