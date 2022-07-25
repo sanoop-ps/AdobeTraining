@@ -3,112 +3,142 @@
 
  use Magento\Framework\Api\ExtensibleDataInterface;
 
- interface CompanyDetailsInterface extends ExtensibleDataInterface
- {
-     /**
-      * @return int
-      */
-     public function getId();
+interface CompanyDetailsInterface extends ExtensibleDataInterface
+{
+    /**
+     * Get Id
+     *
+     * @return int
+     */
+    public function getId();
 
-     /**
-      * @param int $id
-      * @return void
-      */
-     public function setId(int $id);
+    /**
+     *  Set Id
+     *
+     * @param int $id
+     * @return void
+     */
+    public function setId(int $id);
 
-     /**
-      * @return string
-      */
-     public function getCompanyName();
+    /**
+     * Get Company name
+     *
+     * @return string
+     */
+    public function getCompanyName();
 
-     /**
-      * @param string $companyName
-      * @return void
-      */
-     public function setCompanyName(string $companyName);
+    /**
+     * Set Company name
+     *
+     * @param string $companyName
+     * @return void
+     */
+    public function setCompanyName(string $companyName);
 
+    /**
+     * Get Annual income
+     *
+     * @return int
+     */
+    public function getAnnualIncome();
 
-     /**
-      * @return int
-      */
-     public function getAnnualIncome();
+    /**
+     * Set Annual income
+     *
+     * @param string $annualIncome
+     * @return void
+     */
+    public function setAnnualIncome(string $annualIncome);
 
+    /**
+     * Get Address
+     *
+     * @return string
+     */
+    public function getAddress();
 
-     /**
-      * @param string $annualIncome
-      * @return void
-      */
-     public function setAnnualIncome(string $annualIncome);
+    /**
+     * Set Address
+     *
+     * @param string $address
+     * @return void
+     */
+    public function setAddress(string $address);
 
+    /**
+     * Get Work time start
+     *
+     * @return string
+     */
+    public function getWorkTimeStart();
 
-     /**
-      * @return string
-      */
-     public function getAddress();
+    /**
+     * Set Work time start
+     *
+     * @param string $workTimeStart
+     * @return void
+     */
+    public function setWorkTimeStart(string $workTimeStart);
 
-     /**
-      * @param string $address
-      * @return void
-      */
-     public function setAddress(string $address);
+    /**
+     * Get Work time end
+     *
+     * @return string
+     */
+    public function getWorkTimeEnd();
 
-     /**
-      * @return string
-      */
-     public function getWorkTimeStart();
+    /**
+     * Set Work time end
+     *
+     * @param string $workTimeEnd
+     * @return void
+     */
+    public function setWorkTimeEnd(string $workTimeEnd);
 
-     /**
-      * @param string $workTimeStart
-      * @return void
-      */
-     public function setWorkTimeStart(string $workTimeStart);
+    /**
+     * Get Total employees
+     *
+     * @return int
+     */
+    public function getTotalEmployees();
 
-     /**
-      * @return string
-      */
-     public function getWorkTimeEnd();
+    /**
+     * Set Total employees
+     *
+     * @param string $totalEmployees
+     * @return void
+     */
+    public function setTotalEmployees(string $totalEmployees);
 
-     /**
-      * @param string $workTimeEnd
-      * @return void
-      */
-     public function setWorkTimeEnd(string $workTimeEnd);
+    /**
+     * Get Status
+     *
+     * @return bool
+     */
+    public function getStatus();
 
-     /**
-      * @return int
-      */
-     public function getTotalEmployees();
+    /**
+     * Set Status
+     *
+     * @param string $status
+     * @return void
+     */
+    public function setStatus(string $status);
 
-     /**
-      * @param string $totalEmployees
-      * @return void
-      */
-     public function setTotalEmployees(string $totalEmployees);
+    /**
+     * Retrieve existing extension attributes object or create a new one.
+     *
+     * @return \Sanoop\Assignment4\Api\Data\CompanyDetailsExtensionInterface|null
+     */
+    public function getExtensionAttributes();
 
-
-     /**
-      * @return bool
-      */
-     public function getStatus();
-
-     /**
-      * @param string $status
-      * @return void
-      */
-     public function setStatus(string $status);
-
-     /**
-      * Retrieve existing extension attributes object or create a new one.
-      *
-      * @return \Sanoop\Assignment4\Api\Data\CompanyDetailsExtensionInterface|null
-      */
-     public function getExtensionAttributes();
-
-     /**
-      * Set an extension attributes object.
-      *
-      * @param \Sanoop\Assignment4\Api\Data\CompanyDetailsExtensionInterface|null $extensionAttributes
-      * @return $this
-      */
-     public function setExtensionAttributes(\Sanoop\Assignment4\Api\Data\CompanyDetailsExtensionInterface $extensionAttributes);
- }
+    /**
+     * Set an extension attributes object.
+     *
+     * @param \Sanoop\Assignment4\Api\Data\CompanyDetailsExtensionInterface|null $extensionAttributes
+     * @return $this
+     */
+    public function setExtensionAttributes(
+        \Sanoop\Assignment4\Api\Data\CompanyDetailsExtensionInterface $extensionAttributes
+    );
+}

@@ -13,10 +13,25 @@ use Sanoop\Assignment4\Api\Data\CompanyDetailsInterfaceFactory;
 
 class Save extends Action
 {
+    /**
+     * @var CompanyDetailsRepositoryInterfaceFactory
+     */
     public CompanyDetailsRepositoryInterfaceFactory $companyDetailsRepositoryInterfaceFactory;
+    /**
+     * @var RedirectFactory
+     */
     public RedirectFactory $resultRedirect;
+    /**
+     * @var CompanyDetailsInterfaceFactory
+     */
     public CompanyDetailsInterfaceFactory $companyDetailsInterfaceFactory;
 
+    /**
+     * @param CompanyDetailsRepositoryInterfaceFactory $companyDetailsRepositoryInterfaceFactory
+     * @param RedirectFactory $resultRedirect
+     * @param CompanyDetailsInterfaceFactory $companyDetailsInterfaceFactory
+     * @param Context $context
+     */
     public function __construct(
         CompanyDetailsRepositoryInterfaceFactory $companyDetailsRepositoryInterfaceFactory,
         RedirectFactory $resultRedirect,
@@ -33,7 +48,6 @@ class Save extends Action
      * Execute action based on request and return result
      *
      * @return ResultInterface|ResponseInterface
-     * @throws NotFoundException
      */
     public function execute()
     {
