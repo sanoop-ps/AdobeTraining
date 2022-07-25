@@ -9,6 +9,9 @@ use Magento\Framework\View\Result\PageFactory;
 
 class Create extends Action
 {
+    /**
+     * @var PageFactory
+     */
     protected PageFactory $_pageFactory;
 
     /**

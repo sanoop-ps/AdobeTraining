@@ -9,6 +9,9 @@ use Magento\Framework\View\Result\PageFactory;
 
 class Edit extends Action
 {
+    /**
+     * @var PageFactory
+     */
     protected PageFactory $_pageFactory;
 
     /**

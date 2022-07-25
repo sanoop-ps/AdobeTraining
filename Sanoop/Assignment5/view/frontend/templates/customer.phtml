@@ -1,0 +1,16 @@
+<div class="customer-names" data-bind="scope: 'section'">
+    <p data-bind="text:customernames().msg"></p>
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "section": {
+                        "component": "Sanoop_Assignment5/js/section"
+                    }
+                }
+            }
+        }
+    }
+</script>
