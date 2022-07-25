@@ -1,20 +1,21 @@
 {
-  "name": "sanoop/module-assignment5",
-  "version": "1.0.0",
-  "description": "N/A",
-  "type": "magento2-module",
-  "require": {
-    "magento/framework": "*"
-  },
-  "license": [
-    "Proprietary"
-  ],
-  "autoload": {
-    "files": [
-      "registration.php"
+    "name": "sanoop/module-assignment5",
+    "version": "1.0.0",
+    "description": "N/A",
+    "type": "magento2-module",
+    "require": {
+        "php": "8.*",
+        "magento/framework": "*"
+    },
+    "license": [
+        "Proprietary"
     ],
-    "psr-4": {
-      "Sanoop\\Assignment5\\": ""
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Sanoop\\Assignment5\\": ""
+        }
     }
-  }
 }
