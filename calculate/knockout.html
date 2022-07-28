@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+	<head>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div>
+			<label for="value_1">Value 1</label>
+			<input type="number" name="value_1" id="value_1" required data-bind="value:Value1">
+			<label for="value_2">Value 2</label>
+			<input type="number" name="value_2" id="value_2" required  data-bind="value:Value2">
+			<button type="submit">Add</button>
+		</div>
+		<div style="margin-top: 5px; padding-left: 6px;">
+			<label for="result">Result</label>
+			<input type="number" name="result" id="result" data-bind="value:Result">
+		</div>
+	</body>
+	<script type="text/javascript">
+		jQuery(function(){
+		var viewModelConstructor = function()
+		{
+		this.Value1 = ko.observable("");
+		this.Value2 = ko.observable("");
+		this.Result =  ko.computed(function () {
+		return Number(this.Value1()) + Number(this.Value2())
+		}, this);
+		}
+		window.viewModel = new viewModelConstructor;
+		ko.applyBindings(window.viewModel);
+		});
+	</script>
+</html>

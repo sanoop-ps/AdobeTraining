@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	</head>
+	<body>
+		<div>
+			<form id="addition_form">
+				<label for="value_1">Value 1</label>
+				<input type="number" name="value_1" id="value_1" required>
+				<label for="value_2">Value 2</label>
+				<input type="number" name="value_2" id="value_2" required>
+				<button type="submit">Add</button>
+			</form>
+		</div>
+		<div style="margin-top: 5px; padding-left: 6px;">
+			<label for="result">Result</label>
+			<input type="number" name="result" id="result">
+		</div>
+	</body>
+	<script type="text/javascript">
+		$('#addition_form').submit(function(e){
+			e.preventDefault();
+			let value_1=$('#value_1').val();
+			let value_2=$('#value_2').val();
+			$('#result').val(parseInt(value_1)+parseInt(value_2));
+		})
+	</script>
+</html>
