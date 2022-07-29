@@ -10,7 +10,7 @@
 			<input type="number" name="value_1" id="value_1" required data-bind="value:Value1">
 			<label for="value_2">Value 2</label>
 			<input type="number" name="value_2" id="value_2" required  data-bind="value:Value2">
-			<button type="submit">Add</button>
+			<button type="submit" data-bind="click:calculateSum">Add</button>
 		</div>
 		<div style="margin-top: 5px; padding-left: 6px;">
 			<label for="result">Result</label>
@@ -23,12 +23,13 @@
 		{
 		this.Value1 = ko.observable("");
 		this.Value2 = ko.observable("");
-		this.Result =  ko.computed(function () {
-		return Number(this.Value1()) + Number(this.Value2())
-		}, this);
+		this.Result = ko.observable(0);
+		this.calculateSum=function(){
+					this.Result(Number(this.Value1()) + Number(this.Value2()));
+				}
 		}
-		window.viewModel = new viewModelConstructor;
-		ko.applyBindings(window.viewModel);
+		var viewModel = new viewModelConstructor;
+			ko.applyBindings(viewModel);
 		});
 	</script>
 </html>
