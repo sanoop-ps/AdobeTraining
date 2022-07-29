@@ -21,8 +21,8 @@
 		jQuery(function(){
 		var viewModelConstructor = function()
 		{
-		this.Value1 = ko.observable("");
-		this.Value2 = ko.observable("");
+		this.Value1 = ko.observable(0);
+		this.Value2 = ko.observable(0);
 		this.Result = ko.observable(0);
 		this.calculateSum=function(){
 					this.Result(Number(this.Value1()) + Number(this.Value2()));
