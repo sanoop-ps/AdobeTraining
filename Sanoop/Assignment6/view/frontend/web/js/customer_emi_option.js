@@ -18,15 +18,15 @@ define([
             let startEmi;
             $.each(emi_plans().msg, function (index, value) {
                 console.log(value);
-                let Interst_amount = Math.round(prize * (value.interest_rate / 100));
-                let Intersted_amount = Math.round(prize + Interst_amount);
-                let PlanAmount = Math.round(prize + Interst_amount);
                 let Tenure = value.tenure;
                 let InterestRate = value.interest_rate;
+                let Interst_amount = prize * (InterestRate / 100);
+                let Intersted_amount = prize + Interst_amount;
+                let PlanAmount = Intersted_amount / Tenure;
                 if (index == 0) {
-                    startEmi = currency + PlanAmount;
+                    startEmi = currency + PlanAmount.toFixed(2);
                 }
-                html[index] = '<td>' + currency + PlanAmount + 'x' + Tenure + 'm</td><td>' + currency + Interst_amount + '(' + InterestRate + '%)</td><td>' + currency + Intersted_amount + '</td>';
+                html[index] = '<td>' + currency + PlanAmount.toFixed(2) + 'x' + Tenure + 'm</td><td>' + currency + Interst_amount.toFixed(2) + '(' + InterestRate + '%)</td><td>' + currency + Intersted_amount.toFixed(2) + '</td>';
             });
             console.log(html);
             this.startEmi = startEmi;
