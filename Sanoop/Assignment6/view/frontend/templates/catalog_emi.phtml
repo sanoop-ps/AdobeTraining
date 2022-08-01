@@ -1,0 +1,90 @@
+<?php
+$viewmodel = $block->getViewModel();
+$id = $block->getRequest()->getParam('id');
+?>
+
+<div data-block="dropdown" class="minicart-wrapper" data-bind="scope: 'emi_options'">
+    EMI starts at <span data-bind="text:startEmi"></span><a class="action" data-trigger="trigger">
+        <span data-bind="i18n: 'EMI options'"></span>
+    </a>
+</div>
+<div class="block block-minicart"
+     data-mage-init='{
+        "dropdownDialog": {
+            "appendTo": "[data-block=dropdown]",
+            "triggerTarget":"[data-trigger=trigger]",
+            "timeout": 2000,
+            "closeOnMouseLeave": false,
+            "closeOnEscape": true,
+            "autoOpen": false,
+            "triggerClass": "active",
+            "parentClass": "active",
+            "buttons": []
+        }
+     }' data-toggle="dropdown">
+    <div id="minicart-content-wrapper" data-bind="scope: 'emi_options'">
+        <div class="card">
+            <div class="card-header">
+                EMI Options
+            </div>
+            <div class="card-body">
+                <div class="card-title">
+                    <h3>Standard Plans</h3>
+                </div>
+                <table class="table" border="1">
+                    <thead>
+                    <tr>
+                        <th>EMI Plan</th>
+                        <th>Interest(pa)</th>
+                        <th>Total Coast</th>
+                    </tr>
+                    </thead>
+                    <tbody data-bind="foreach: customeremi">
+                    <tr data-bind="html: $data"></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "emi_options": {
+                        "component": "Sanoop_Assignment6/js/customer_emi_option",
+                        "price": "<?= $viewmodel->getProductPrice($id); ?>",
+                        "currency":"<?= $viewmodel->getCurrentCurrencySymbol(); ?>"
+                    }
+                }
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
